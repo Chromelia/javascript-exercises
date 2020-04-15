@@ -17,7 +17,20 @@
  */
 
 function fizzBuzz(n) {
-
+    var i;
+    for (i=1; i <=n; i++){
+        res='';
+        if (i % 3 != 0 && i % 5 != 0){
+            res = i;
+        }
+        if (i % 3 == 0){
+            res += 'fizz';
+        }
+        if (i % 5 == 0){
+            res += 'buzz';
+        }
+        console.log(res);
+    }
 }
 
 module.exports = fizzBuzz;
