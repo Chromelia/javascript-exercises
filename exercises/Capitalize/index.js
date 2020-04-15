@@ -12,7 +12,16 @@
  */
 
 function capitalize(str) {
-
+    var strArray = str.split(" ");
+    var i;
+    for (i in strArray){
+        firstLetter = strArray[i][0];
+        restOfWord = strArray[i].slice(1);
+        firstLetter = firstLetter.toUpperCase();
+        strArray[i] = firstLetter.concat("", restOfWord);
+    }
+    var strReturn = strArray.join(" ");
+    return strReturn;
 }
 
 module.exports = capitalize;
