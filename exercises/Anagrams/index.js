@@ -1,3 +1,5 @@
+//@ts-check
+
 /**
  * Anagrams
  *
@@ -13,7 +15,22 @@
  */
 
 function anagrams(stringA, stringB) {
-
+    var aTest = stringA.toLowerCase();
+    var bTest = stringB.toLowerCase();
+    aTest = aTest.replace(/[^A-z]/g, "");
+    bTest = bTest.replace(/[^A-z]/g, "");
+    if (aTest.length != bTest.length){
+        return false;
+    }
+    else{
+        var char = "";
+        for (char in aTest){
+            if (!bTest.includes(aTest.charAt(char))){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 module.exports = anagrams;

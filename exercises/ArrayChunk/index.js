@@ -13,7 +13,15 @@
  */
 
 function chunk(array, size) {
-
+    var arraySplit = array.slice();
+    var arrayHolder = new Array();
+    while (arraySplit.length > size){
+        arrayHolder.push(arraySplit.splice(0,size));
+    }
+    if (arraySplit.length > 0){
+        arrayHolder.push(arraySplit);
+    }
+    return arrayHolder;
 }
 
 module.exports = chunk;
