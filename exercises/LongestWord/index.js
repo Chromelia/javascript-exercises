@@ -13,7 +13,12 @@
 */
 
 function longestWord(sen) {
-
+    sen_arr = sen.split(" ");
+    for (i=0; i < sen_arr.length; i++) {
+        sen_arr[i] = sen_arr[i].replace(/\W/g, '');
+    }
+    arr_arr = sen_arr.sort((a,b) => b.length - a.length);
+    return arr_arr[0];
 }
 
 module.exports = longestWord;
